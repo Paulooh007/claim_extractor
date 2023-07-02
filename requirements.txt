@@ -1,4 +1,3 @@
-transformers
-datasets
-streamlit
-tensorflow
+gradio
+openai
+pandas
