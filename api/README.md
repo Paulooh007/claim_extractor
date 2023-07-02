@@ -1,6 +1,4 @@
 ## 1. Pull the Docker Image
-To pull the Docker image for the API, open a terminal and run the following command:
-
 ```
 docker pull paulokewunmi/claim-extraction:1.0.0
 ```
@@ -14,13 +12,13 @@ docker run -p 8000:8000 -e OPENAI_API_KEY=your_api_key paulokewunmi/claim-extrac
 
 ## 3. Test the API
 Once the Docker container is running, you can go ahead to test the API.
-Make a POST request to http://0.0.0.0:8000/extract with the following parameters:
+Make a POST request to `http://0.0.0.0:8000/extract` with the following parameters:
 
 `file`: Select a text file to upload.
 
 The API will process the text file and return list of claims
 
-Easiest way to test the api is by using the swagger ui found in http://0.0.0.0:8000/docs , then click `Try it out`
+Easiest way to test the api is by using the swagger ui found in `http://0.0.0.0:8000/docs` , then click `Try it out`
 
 ![img](../swagger_ui.png)
 
@@ -30,6 +28,9 @@ Example using curl.
 curl -X POST -F "file=@../test.txt" http://0.0.0.0:8000/extract
 
 ```
+
+### Sample Response.
+```
 {
   "claims": [
     "And I said here, if a report by the Vanguard newspaper is anything to go by, Soldiers deployed around kuje prison who had mastered the terrain were replaced 24 hours before the terrorist invaded the prison.",
@@ -37,4 +38,5 @@ curl -X POST -F "file=@../test.txt" http://0.0.0.0:8000/extract
    
   ]
 }
+
 ```
