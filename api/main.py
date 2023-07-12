@@ -9,14 +9,6 @@ app = FastAPI()
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 
-def filter_sentences(text):
-    sentences = re.split(r"(?<=[.!?])\s+", text)
-    sir_sentences = [
-        sentence for sentence in sentences if sentence.lower().startswith("sir")
-    ]
-    return sir_sentences
-
-
 def get_claims(text):
     sentences = re.split(r"(?<=[.!?])\s+", text)
 
